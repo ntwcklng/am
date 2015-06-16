@@ -1,23 +1,11 @@
 ---
 layout: default
 ---
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+<img src="/assets/AM_Logo.png" alt="">
+<div class="kontakt">
+	<input type="text" placeholder="name">
+	<input type="text" placeholder="eMail">
+	<textarea name="" id="" placeholder="deine Nachricht"></textarea>
+	<button>Senden</button>
 </div>
+
