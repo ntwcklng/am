@@ -39,6 +39,6 @@ task :git do
 	message += " rake_auto_push"
 	execute("git add .")
 	execute("git commit -m \"#{message}\"")
-	execute("git push github")
+	execute("git push")
 	puts "github DONE".green
 end
