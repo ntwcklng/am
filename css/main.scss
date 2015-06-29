@@ -35,24 +35,29 @@ body {
 	input {
 		padding: .5em;
 		width: 155px;
-		background: rgba(255,255,255,.8);
-		margin-bottom:2em;
+		max-width: 100%;
+		background: rgba(255,255,255,.7);
+		margin-bottom:1em;
+		font-size: 1.2em;
 	}
 	textarea {
+		max-width: 100%;
+		font-size: 1.2em;
 		padding: 1em;
 		display: block;
 		margin: 0 auto;
 		width: 320px;
-		background: rgba(255,255,255,.8);
+		background: rgba(255,255,255,.7);
 		height: 220px;
 	}
 	button {
-		width: 342px;
+		max-width: 100%;
+		width: 352px;
 		margin-top: 10px;
 		background: rgba(0, 0, 0, 0.3);
 		border: 2px solid white;
 		padding: .1em 0;
 		color: white;
-		font-size: 1.7em;
+		font-size: 1.5em;
 	}
 }
