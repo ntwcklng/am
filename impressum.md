@@ -8,13 +8,16 @@ Impressum
 Angaben gemäß §5TMG:
 
 Verantwortlich für den Inhalt:
+
 Autopflege Mieth
 Inhaber Marvin Mieth
 Friedhofstr.7
+
 Standort Halle: Marienstr. 41
 46284 Dorsten
+
 Mobil: 0170 32 62 412
-eMail: info [at] autopflege-mieth.de
+eMail: mail [at] autopflege-mieth.de
 
 
 Haftungsausschluss: 
