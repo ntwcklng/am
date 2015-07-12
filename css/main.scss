@@ -2,6 +2,32 @@
 ---
 @charset "utf-8";
 $inputBG: ".5";
+
+.preiskalkulator-wrapper {
+	margin: 0 auto;
+	width: 320px;
+	margin-bottom: 2em;
+	.preis {
+		padding: 1.2em .5em;
+		background: rgba(white, .4);
+		text-align: left;
+		color: black;
+		margin-bottom: 3px;
+		cursor: pointer;
+		transition: 0.3s;
+		&.active {
+			background: #00AAD4;
+			color: white;
+		}
+		&:hover {
+			background: #00AAD4;
+		}
+
+		strong {
+			float: right;
+		}
+	}
+}
 a {
 	color: white;
 }
@@ -24,6 +50,7 @@ body {
 	background: rgba(0,0,0,0.7);
 	min-height: 100%;
 	min-height: 100vh;
+	padding-bottom: 5em;
 	img {
 		margin: 1em 0;
 		opacity: .7;
