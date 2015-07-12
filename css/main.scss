@@ -5,7 +5,9 @@ $inputBG: ".5";
 
 .preiskalkulator-wrapper {
 	margin: 0 auto;
-	width: 320px;
+	max-width: 520px;
+	min-width: 320px;
+	width: 40%;
 	margin-bottom: 2em;
 	.preis {
 		padding: 1.2em .5em;
