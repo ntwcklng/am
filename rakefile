@@ -18,6 +18,12 @@ def execute(command)
 	system "#{command}"
 end
 
+desc "DEV"
+task :dev do
+	Rake::Task[:jsx].invoke
+	Rake::Task[:jekyll_serve].invoke
+end
+
 desc "Deploy all Files to S3 Bucket"
 task :deploy do
 	Rake::Task[:jsx].invoke
@@ -34,6 +40,11 @@ end
 desc "Builing Jekyll"
 task :jekyll_build do
 	execute("jekyll build")
+end
+
+desc "Serving Jekyll"
+task :jekyll_serve do
+	execute("jekyll serve")
 end
 
 desc "Add everything and push to git"

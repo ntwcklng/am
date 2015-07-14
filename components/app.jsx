@@ -34,7 +34,6 @@ var Leistung = React.createClass({
 	},
 	ClickHandler: function(e) {
 		var active = !this.state.active;
-		console.log(this.props.sperren);
 		if(this.props.sperren) {
 			if(def && !active) {
 				def=false;
@@ -61,12 +60,17 @@ var Leistung = React.createClass({
 		}
 	},
 	render: function() {
-		return(
-			<div className={this.state.active ? 'active preis' : 'preis'} onClick={this.ClickHandler}>
-				{this.props.name}
-				<strong>{this.props.preis} EUR</strong>
-			</div>
-		)
+		if(this.props.sperren && !this.state.active && def) {
+			return(<span></span>);
+			
+		} else {
+			return(
+				<div className={this.state.active ? 'active preis' : 'preis'} onClick={this.ClickHandler}>
+					{this.props.name}
+					<strong>{this.props.preis} EUR</strong>
+				</div>
+			);
+		}
 	}
 
 });
