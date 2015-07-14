@@ -12,7 +12,7 @@ var Preiskalkulator = React.createClass({displayName: "Preiskalkulator",
 	render: function() {
 		var self = this;
 		var getLeistungen = this.props.leistungen.map(function(l){
-			return React.createElement(Leistung, {name: l.name, preis: l.preis, active: l.active, addTotal: self.addTotal, def: l.def})
+			return React.createElement(Leistung, {name: l.name, preis: l.preis, active: l.active, addTotal: self.addTotal, sperren: l.sperren})
 		});
 		return (
 		React.createElement("div", {className: "preiskalkulator-wrapper"}, 
@@ -34,7 +34,7 @@ var Leistung = React.createClass({displayName: "Leistung",
 	},
 	ClickHandler: function(e) {
 		var active = !this.state.active;
-		console.log(active);
+		console.log(this.props.sperren);
 		if(this.props.sperren) {
 			if(def && !active) {
 				def=false;
