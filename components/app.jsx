@@ -62,7 +62,6 @@ var Leistung = React.createClass({
 	render: function() {
 		if(this.props.sperren && !this.state.active && def) {
 			return(<span></span>);
-			
 		} else {
 			return(
 				<div className={this.state.active ? 'active preis' : 'preis'} onClick={this.ClickHandler}>
@@ -72,7 +71,6 @@ var Leistung = React.createClass({
 			);
 		}
 	}
-
 });
 
 var preise = [
@@ -84,7 +82,7 @@ var preise = [
 	{name: "Felgenversiegelung", preis: 80},
 	{name: "Gtechniq Crystal Serum", preis: 180},
 	{name: "Gtechniq Exo", preis: 40}
-]
+];
 React.render(
 	<Preiskalkulator leistungen={preise} />,
 	document.querySelector("#preiskalkulator")
