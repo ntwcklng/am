@@ -28,7 +28,7 @@ end
 
 desc "Transform JSX to JS"
 task :jsx do
-	execute("jsx -x jsx components/ build/")
+	execute("jsx -x jsx --no-cache-dir components/ build/")
 end
 
 desc "Builing Jekyll"
