@@ -20,9 +20,15 @@ end
 
 desc "Deploy all Files to S3 Bucket"
 task :deploy do
+	Rake::Task[:jsx].invoke
 	Rake::Task[:git].invoke
 	Rake::Task[:jekyll_build].invoke
 	execute("s3cmd sync -M --acl-public --delete-removed --add-header='Cache-Control:max-age=168000' _site/ s3://#{CONFIG[:s3_bucket]} ")
+end
+
+desc "Transform JSX to JS"
+task :jsx do
+	execute("jsx -x jsx components/ build/")
 end
 
 desc "Builing Jekyll"
