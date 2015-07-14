@@ -35,7 +35,7 @@ var Leistung = React.createClass({displayName: "Leistung",
 	ClickHandler: function(e) {
 		var active = !this.state.active;
 		console.log(active);
-		if(this.props.name === "Defektkorrektur I" || this.props.name === "Defektkorrektur II") {
+		if(this.props.sperren) {
 			if(def && !active) {
 				def=false;
 				this.setState({
@@ -72,8 +72,8 @@ var Leistung = React.createClass({displayName: "Leistung",
 });
 
 var preise = [
-	{name: "Polieren I (wenig Kratzer)", preis: 280, def: true},
-	{name: "Polieren II (viele Kratzer)", preis: 400, def: true},
+	{name: "Polieren I (wenig Kratzer)", preis: 280, sperren: true},
+	{name: "Polieren II (viele Kratzer)", preis: 400, sperren: true},
 	{name: "Innenraum inkl. Lederpflege", preis: 140},
 	{name: "Motorraum", preis: 60},
 	{name: "Scheibenversiegelung", preis: 40},
