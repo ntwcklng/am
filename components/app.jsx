@@ -12,7 +12,7 @@ var Preiskalkulator = React.createClass({
 	render: function() {
 		var self = this;
 		var getLeistungen = this.props.leistungen.map(function(l){
-			return <Leistung name={l.name} preis={l.preis} active={l.active} addTotal={self.addTotal} sperren={l.sperren} />
+			return <Leistung key={l.name} name={l.name} preis={l.preis} active={l.active} addTotal={self.addTotal} sperren={l.sperren} />
 		});
 		return (
 		<div className="preiskalkulator-wrapper">

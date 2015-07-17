@@ -12,7 +12,7 @@ var Preiskalkulator = React.createClass({displayName: "Preiskalkulator",
 	render: function() {
 		var self = this;
 		var getLeistungen = this.props.leistungen.map(function(l){
-			return React.createElement(Leistung, {name: l.name, preis: l.preis, active: l.active, addTotal: self.addTotal, sperren: l.sperren})
+			return React.createElement(Leistung, {key: l.name, name: l.name, preis: l.preis, active: l.active, addTotal: self.addTotal, sperren: l.sperren})
 		});
 		return (
 		React.createElement("div", {className: "preiskalkulator-wrapper"}, 
@@ -62,7 +62,6 @@ var Leistung = React.createClass({displayName: "Leistung",
 	render: function() {
 		if(this.props.sperren && !this.state.active && def) {
 			return(React.createElement("span", null));
-			
 		} else {
 			return(
 				React.createElement("div", {className: this.state.active ? 'active preis' : 'preis', onClick: this.ClickHandler}, 
@@ -72,7 +71,6 @@ var Leistung = React.createClass({displayName: "Leistung",
 			);
 		}
 	}
-
 });
 
 var preise = [
@@ -84,7 +82,7 @@ var preise = [
 	{name: "Felgenversiegelung", preis: 80},
 	{name: "Gtechniq Crystal Serum", preis: 180},
 	{name: "Gtechniq Exo", preis: 40}
-]
+];
 React.render(
 	React.createElement(Preiskalkulator, {leistungen: preise}),
 	document.querySelector("#preiskalkulator")
