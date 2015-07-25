@@ -12,7 +12,7 @@ var Preiskalkulator = React.createClass({
 	render: function() {
 		var self = this;
 		var getLeistungen = this.props.leistungen.map(function(l){
-			return <Leistung key={l.name} name={l.name} preis={l.preis} active={l.active} addTotal={self.addTotal} sperren={l.sperren} />
+			return <Leistung key={l.name} name={l.name} preis={l.preis} active={l.active} addTotal={self.addTotal} sperren={l.sperren} serum={l.serum} exo={l.exo} />
 		});
 		return (
 		<div className="preiskalkulator-wrapper">
@@ -25,15 +25,33 @@ var Preiskalkulator = React.createClass({
 
 });
 var def = false;
+var showExo = true;
 var Leistung = React.createClass({
 	getInitialState: function() {
 		return {
 			active: false,
-			def: false
+			def: false,
+			showExo: true
 		}
 	},
 	ClickHandler: function(e) {
 		var active = !this.state.active;
+		if(this.props.exo) {
+			if (showExo) {
+				console.log("PLSSSS");
+				this.setState({
+					active: false
+				});
+				this.props.addTotal(-this.props.preis);
+				return;
+			}
+		}
+		if(this.props.serum) {
+			showExo = (!active) ? true : false;
+			this.setState({
+				showExo: active
+			});
+		}
 		if(this.props.sperren) {
 			if(def && !active) {
 				def=false;
@@ -63,8 +81,13 @@ var Leistung = React.createClass({
 		if(this.props.sperren && !this.state.active && def) {
 			return(<span></span>);
 		} else {
+			var showExoHelper = "";
+			if(this.props.exo && showExo) {
+				showExoHelper += " hideExo";
+			}
 			return(
-				<div className={this.state.active ? 'active preis' : 'preis'} onClick={this.ClickHandler}>
+				<div className={this.state.active ? 'active preis' + showExoHelper : 'preis' + showExoHelper}
+				 onClick={this.ClickHandler}>
 					{this.props.name}
 					<strong>{this.props.preis} EUR</strong>
 				</div>
@@ -80,8 +103,8 @@ var preise = [
 	{name: "Motorraum", preis: 60},
 	{name: "Scheibenversiegelung", preis: 40},
 	{name: "Felgenversiegelung", preis: 80},
-	{name: "Gtechniq Crystal Serum", preis: 180},
-	{name: "Gtechniq Exo", preis: 40}
+	{name: "Gtechniq Crystal Serum", preis: 180, serum: true},
+	{name: "+ Gtechniq Exo Topping", preis: 40, exo: true}
 ];
 React.render(
 	<Preiskalkulator leistungen={preise} />,

@@ -2,7 +2,9 @@
 ---
 @charset "utf-8";
 $inputBG: ".5";
-
+.hideExo {
+	display: none;
+}
 .preiskalkulator-wrapper {
 	margin: 0 auto;
 	max-width: 520px;
