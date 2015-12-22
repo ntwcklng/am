@@ -17,8 +17,10 @@ Friedhofstr. 7
 Standort Halle: Marienstr. 41
 46284 Dorsten
 
-Mobil: 0170 32 62 412
+Kontaktaufnahme bitte ausschließlich per eMail!
 eMail: mmieth+autopflege [at] gmail.com
+
+<small>Mobil: 0170 32 62 412</small>
 
 
 Haftungsausschluss:
